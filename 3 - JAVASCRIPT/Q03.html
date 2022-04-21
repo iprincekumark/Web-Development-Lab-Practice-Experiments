@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function thous_sep(n)
+        {
+            var parts=n.toString().split(".");
+            pat=/\B(?=(\d{3})+(?!\d))/;
+            parts[0]=parts[0].replace(pat,",");
+            return parts.join(".");
+        }
+        console.log(thous_sep(123456.2356));
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function matchemail(s)
+        {
+            var pat=/^\w+([.\-]?\w+)*@\w+([.\-]?\w+)*(\.\w{2,3})+$/;
+            return pat.test(s);
+        }
+        console.log(matchemail("mysite.ourearth.com"));
+        console.log(matchemail("mysite@you.me.net"));
+    </script>
+</body>
+</html>

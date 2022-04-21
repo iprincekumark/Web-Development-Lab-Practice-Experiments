@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a1=[1,5,2,9,7,3,1];
+        function swap(i,j) {
+            var t=a1[i];
+            a1[i]=a1[j];
+            a1[j]=t;
+        }
+        function partition(l,h) {
+            var p=a1[h];
+            var i,j;
+            j=l;
+            for(i=l;i<h;i++) {
+                if(a1[i]<p) {
+                    swap(i,j);
+                    j++;
+                }
+            }
+            swap(j,h);
+            return j;
+        }
+        function qsort(l,h) {
+            if(l<=h) {
+                var p=partition(l,h);
+                qsort(l,p-1);   
+                qsort(p+1,h);
+            }
+        }
+        qsort(0,a1.length-1);
+        console.log(a1);
+    </script>
+</body>
+</html>

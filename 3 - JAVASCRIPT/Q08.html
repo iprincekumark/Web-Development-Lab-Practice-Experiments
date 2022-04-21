@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function dis(c) {
+            document.getElementById("input").value+=c;
+        }
+
+        function eval() {
+            var s=document.getElementById("input").value;
+            var n1="",n2="",op="";
+            var f=0;
+            for(var i=0;i<s.length;i++) {
+                var c=s.charAt(i);
+                if(c=='+' || c=='-' || c=='*' || c=='/' || c=='%') {
+                    f=1;
+                    op+=c;
+                }
+                else if(f==0)
+                    n1+=c;
+                else 
+                    n2+=c;
+            }
+            n1=parseFloat(n1);
+            n2=parseFloat(n2);
+            var res=0;
+
+            switch(op)
+            {
+                case '+':res=n1+n2;
+                    break;
+                case '-':res=n1-n2;
+                    break;
+                case '*':res=n1*n2;
+                    break;
+                case '/':res=n1/n2;
+                    break;
+                case '%':res=n1%n2;
+                    break;
+            }
+
+            document.getElementById("result").value=res;
+        }
+
+        function cls() {
+            document.getElementById("input").value='';
+            document.getElementById("result").value='';
+        }
+
+    </script>
+</body>
+</html>

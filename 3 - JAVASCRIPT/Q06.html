@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calc_grade(avg) {
+            var grade;
+            if(avg>90)
+                grade='A';
+            else if(avg>80)
+                grade='B';
+            else if(avg>70)
+                grade='C';
+            else if(avg>60)
+                grade='D';
+            else if(avg>50)
+                grade='E';
+            else
+                grade='F';
+            return grade;
+        }
+        function calc_avg(marks) {
+            var t=0;
+            for(m in marks)
+                t+=marks[m];
+            return t/5;
+        }
+        var marks=[90,100,76,98,89];
+        var avg=calc_avg(marks);
+        console.log(avg,calc_grade(avg));
+    </script>
+</body>
+</html>
